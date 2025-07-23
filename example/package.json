@@ -1,0 +1,25 @@
+{
+  "name": "Angka Terbilang Indonesia",
+  "version": "1.0.0",
+  "description": "Angka Terbilang in NodeJS Example",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gratcy/angka-terbilang-indonesia.git"
+  },
+  "keywords": [
+    "Angka",
+    "Terbilang",
+    "NodeJS",
+    "Example"
+  ],
+  "author": "Gratcy Palma P Hutapea",
+  "license": "Beerware",
+  "bugs": {
+    "url": "https://github.com/gratcy/angka-terbilang-indonesia/issues"
+  },
+  "homepage": "https://github.com/gratcy/angka-terbilang-indonesia#readme"
+}
