@@ -1,3 +1,3 @@
 const angka = require('..')
-console.log(angka.toTerbilang(10123))
-console.log(angka.toTerbilang(10123.57))
+console.log(angka.toTerbilang(7654))
+console.log(angka.toTerbilang(7654.211, {dec: '.', lang: 'en'}))

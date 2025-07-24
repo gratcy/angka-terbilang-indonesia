@@ -1,22 +1,73 @@
 // Definisi Array Angka dan Satuan
-const arrAngka =  ['', 'satu', 'dua', 'tiga', 'empat', 'lima', 'enam', 'tujuh', 'delapan', 'sembilan']
-const arrSatuan = ['', 'ribu', 'juta', 'milyar', 'triliun', 'quadriliun', 'quintiliun', 'sextiliun', 'septiliun', 'oktiliun', 'noniliun', 'desiliun', 'undesiliun', 'duodesiliun', 'tredesiliun', 'quattuordesiliun', 'quindesiliun', 'sexdesiliun', 'septendesiliun', 'oktodesiliun', 'novemdesiliun', 'vigintiliun']
+const langArr = {
+  id: {
+    angka: ['', 'satu', 'dua', 'tiga', 'empat', 'lima', 'enam', 'tujuh', 'delapan', 'sembilan'],
+    satuan: ['', 'ribu', 'juta', 'milyar', 'triliun', 'quadriliun', 'quintiliun', 'sextiliun', 'septiliun', 'oktiliun', 'noniliun', 'desiliun', 'undesiliun', 'duodesiliun', 'tredesiliun', 'quattuordesiliun', 'quindesiliun', 'sexdesiliun', 'septendesiliun', 'oktodesiliun', 'novemdesiliun', 'vigintiliun'],
+    sepuluh: 'sepuluh',
+    sebelas: 'sebelas',
+    belas: 'belas',
+    seratus: 'seratus',
+    seribu: 'seribu',
+    puluh: 'puluh',
+    ratus: 'ratus',
+    nol: 'nol',
+    koma: 'koma'
+  },
+  en: {
+    angka: ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'],
+    satuan: ['', 'thousand', 'million', 'billion', 'trillion', 'quadrillion', 'quintillion', 'sextillion', 'septillion', 'octillion', 'nonillion', 'decillion', 'undecillion', 'duodecillion', 'tredecilion', 'quattuordecilion', 'quindecilion', 'sexdecilion', 'septendecilion', 'octodecilion', 'novemdesiliun', 'vigintillion'],
+    sepuluh: 'ten',
+    sebelas: 'eleven',
+    belas: 'teen',
+    seratus: 'one hundred',
+    seribu: 'one thousand',
+    puluh: 'ty',
+    ratus: 'hundred',
+    nol: 'nol',
+    koma: 'and',
+    two: 'twen',
+    three: 'thir',
+    four: 'for',
+    five: 'fif',
+    six: 'six',
+    seven: 'seven',
+    eight: 'eight',
+    nine: 'nine',
+    duabelas: 'twelve',
+    tigabelas: 'thirteen'
+  }
+}
+
+var arrAngka =  langArr.id.angka
+var arrSatuan = langArr.id.satuan
+var lang = 'id'
 
 // toTerbilang Function
-function toTerbilang(strAngka) {
+function toTerbilang(strAngka, config={dec: '.', lang: 'id'}) {
   strAngka = String(strAngka)
-  angkaArr = strAngka.split('.', strAngka)
+  angkaArr = strAngka.split(config.dec || '.', strAngka)
+  
+  if (config.lang === 'en') {
+    arrAngka =  langArr.en.angka
+    arrSatuan = langArr.en.satuan
+    lang = 'en'
+  }
 
   strA = ''
   for (let i=0;i<angkaArr.length;++i) {
     if (i === 1) {
-      strA += ' koma ' + terbilang(angkaArr[i]) 
+      strA += ` ${langArr[lang].koma} ` + terbilang(angkaArr[i]) 
     } else {
       strA += terbilang(angkaArr[i])
     }
   }
 
   return strA.trim()
+}
+
+function replaceString(str, rep) {
+  console.log(str, rep)
+  return str.replace(rep, '');
 }
 
 function terbilang(strAngka) {
@@ -30,7 +81,7 @@ function terbilang(strAngka) {
 
   // Jika Panjang Angka Nol dan Angka Pertama adalah Nol Maka Proses Nol
   if (lenAngka === 0 && Number(strAngka[0]) === 0) {
-    return 'nol'
+    return langArr[lang].nol
   }
 
   // Jika Angka Over dari Satuan Maka Return Error
@@ -62,7 +113,7 @@ function terbilang(strAngka) {
         switch (grpDigit) {
           case 2:
             // Proses Ratusan
-            tmpTerbilang += 'seratus'
+            tmpTerbilang += langArr[lang].seratus
             break
 
           case 1:
@@ -72,17 +123,27 @@ function terbilang(strAngka) {
             switch (nextIntAngka) {
               case 1:
                 // Proses Sebelas
-                tmpTerbilang += 'sebelas'
+                tmpTerbilang += langArr[lang].sebelas
                 break
 
               case 0:
                 // Proses Sepuluh
-                tmpTerbilang += 'sepuluh'
+                tmpTerbilang += langArr[lang].sepuluh
                 break
 
               default:
                 // Proses Belasan
-                tmpTerbilang += arrAngka[nextIntAngka] + ' belas'
+                if (lang === 'en') {
+                  if (arrAngka[nextIntAngka] === 'two') {
+                    tmpTerbilang += langArr[lang].duabelas
+                  } else if (arrAngka[nextIntAngka] === 'three') {
+                    tmpTerbilang += langArr[lang].tigabelas
+                  } else {
+                    tmpTerbilang += langArr[lang][arrAngka[nextIntAngka]] + langArr[lang].belas, arrAngka[nextIntAngka]
+                  }
+                } else {
+                  tmpTerbilang += arrAngka[nextIntAngka] + ` ${langArr[lang].belas}`
+                }
                 break
             }
 
@@ -102,7 +163,7 @@ function terbilang(strAngka) {
               }
 
               // Proses Seribu
-              resTerbilang += 'seribu'
+              resTerbilang += langArr[lang].seribu
 
               // Reset Penghitung Nol
               cntZero = 0
@@ -122,16 +183,20 @@ function terbilang(strAngka) {
       default:
         // Proses Angka
         tmpTerbilang += arrAngka[intAngka]
-
         switch (grpDigit) {
           case 2:
             // Proses Ratusan
-            tmpTerbilang += ' ratus'
+            tmpTerbilang += ` ${langArr[lang].ratus}`
             break
 
           case 1:
             // Proses Puluhan
-            tmpTerbilang += ' puluh'
+            if (lang === 'en') {
+              tmpTerbilang += langArr[lang][arrAngka[intAngka]] + langArr[lang].puluh, arrAngka[intAngka]
+              tmpTerbilang = replaceString(tmpTerbilang, arrAngka[intAngka])
+            } else {
+              tmpTerbilang += ` ${langArr[lang].puluh}`
+            }
             break
         }
         break
