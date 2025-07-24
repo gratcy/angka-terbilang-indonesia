@@ -45,8 +45,8 @@ var lang = 'id'
 // toTerbilang Function
 function toTerbilang(strAngka, config={dec: '.', lang: 'id'}) {
   strAngka = String(strAngka)
-  angkaArr = strAngka.split(config.dec || '.', strAngka)
-  
+
+  angkaArr = strAngka.split((config.dec || '.'))
   if (config.lang === 'en') {
     arrAngka =  langArr.en.angka
     arrSatuan = langArr.en.satuan
