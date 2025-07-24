@@ -1,7 +1,7 @@
 This fork from `https://github.com/dimaskiddo/angka-terbilang-nodejs`
 
 # Angka to Terbilang [![NPM Version](https://img.shields.io/badge/npm-v6.13.4-blue)](https://www.npmjs.com/package/@gratcy/angka-terbilang-indonesia) [![Minified Size](https://img.shields.io/badge/minified_size-3.7Kib-blue)](https://www.npmjs.com/package/@gratcy/angka-terbilang-indonesia) [![NPM Downloads](https://img.shields.io/badge/downloads-464K-green)](https://www.npmjs.com/package/@gratcy/angka-terbilang-indonesia)
-Mengkonversi angka ke dalam bilangan bahasa Indonesia dan bahasa Inggris. Misalnya dari `123`, menjadi `seratus dua puluh tiga`. Atau bisa juga `123.45` menjadi `seratus dua puluh tiga koma empat puluh lima`
+Mengkonversi angka ke dalam bilangan bahasa Indonesia dan bahasa Inggris. Misalnya dari `123`, menjadi `seratus dua puluh tiga`. Atau bisa juga `123.45` menjadi `seratus dua puluh tiga koma empat puluh lima`. Bisa juga kedalam bahasa inggris.
 
 ## Instalasi
 
@@ -33,6 +33,7 @@ console.log(angka.toTerbilang(10123.57))
 |               |            | `id: Indonesia`     |
 |               |            | `en: Inggris`       |
 | Desimal   	| `dec`      | `default: .`        |
+
 
 ## Catatan
 Dibuat untuk kebutuhan Bareksa Payment Tribe

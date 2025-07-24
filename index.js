@@ -23,7 +23,7 @@ const langArr = {
     seribu: 'one thousand',
     puluh: 'ty',
     ratus: 'hundred',
-    nol: 'nol',
+    nol: 'zero',
     koma: 'and',
     two: 'twen',
     three: 'thir',
