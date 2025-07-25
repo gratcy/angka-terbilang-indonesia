@@ -66,7 +66,6 @@ function toTerbilang(strAngka, config={dec: '.', lang: 'id'}) {
 }
 
 function replaceString(str, rep) {
-  console.log(str, rep)
   return str.replace(rep, '');
 }
 

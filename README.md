@@ -5,8 +5,13 @@ Mengkonversi angka ke dalam bilangan bahasa Indonesia dan bahasa Inggris. Misaln
 
 ## Instalasi
 
+### via **npm**:
 ```
 npm install @gratcy/angka-terbilang-indonesia
+```
+### via **yarn**:
+```
+yarn add @gratcy/angka-terbilang-indonesia
 ```
 
 atau langsung dari web browser
@@ -34,6 +39,33 @@ console.log(angka.toTerbilang(10123.57))
 |               |            | `en: Inggris`       |
 | Desimal   	| `dec`      | `default: .`        |
 
+## Mendukung bilangan besar, hingga 10<sup>63</sup>.
+
+| Angka           | Satuan           |
+|:---------------:|:----------------:|
+| 10<sup>1</sup>  | puluhan          |
+| 10<sup>2</sup>  | ratusan          |
+| 10<sup>3</sup>  | ribu             |
+| 10<sup>6</sup>  | juta             |
+| 10<sup>9</sup>  | milyar           |
+| 10<sup>12</sup> | triliun          |
+| 10<sup>15</sup> | quadriliun       |
+| 10<sup>18</sup> | quintiliun       |
+| 10<sup>21</sup> | sextiliun        |
+| 10<sup>24</sup> | septiliun        |
+| 10<sup>27</sup> | oktiliun         |
+| 10<sup>30</sup> | noniliun         |
+| 10<sup>33</sup> | desiliun         |
+| 10<sup>36</sup> | undesiliun       |
+| 10<sup>39</sup> | duodesiliun      |
+| 10<sup>42</sup> | tredesiliun      |
+| 10<sup>45</sup> | quattuordesiliun |
+| 10<sup>48</sup> | quindesiliun     |
+| 10<sup>51</sup> | sexdesiliun      |
+| 10<sup>54</sup> | septendesiliun   |
+| 10<sup>57</sup> | oktodesiliun     |
+| 10<sup>60</sup> | novemdesiliun    |
+| 10<sup>63</sup> | vigintiliun      |
 
 ## Catatan
 Dibuat untuk kebutuhan Bareksa Payment Tribe
