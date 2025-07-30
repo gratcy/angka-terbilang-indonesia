@@ -1,4 +1,4 @@
-const angka = require("..");
+const angka = require("../dist/index.js");
 
 test('nol', () => {
   expect(angka.toTerbilang('0')).toBe("nol");
