@@ -35,6 +35,16 @@ test('jutaan', () => {
   expect(angka.toTerbilang('121212121')).toBe("seratus dua puluh satu juta dua ratus dua belas ribu seratus dua puluh satu");
 });
 
+test('desimal', () => {
+  expect(angka.toTerbilang('1000000.11')).toBe("satu juta koma satu satu");
+  expect(angka.toTerbilang('1001000.11')).toBe("satu juta seribu koma satu satu");
+  expect(angka.toTerbilang('1011000.11')).toBe("satu juta sebelas ribu koma satu satu");
+  expect(angka.toTerbilang('131021111.11')).toBe("seratus tiga puluh satu juta dua puluh satu ribu seratus sebelas koma satu satu");
+  expect(angka.toTerbilang('11021111.11')).toBe("sebelas juta dua puluh satu ribu seratus sebelas koma satu satu");
+  expect(angka.toTerbilang('212121212.11')).toBe("dua ratus dua belas juta seratus dua puluh satu ribu dua ratus dua belas koma satu satu");
+  expect(angka.toTerbilang('121212121.11')).toBe("seratus dua puluh satu juta dua ratus dua belas ribu seratus dua puluh satu koma satu satu");
+});
+
 test('big-number', () => {
   expect(angka.toTerbilang('1000000001000000001')).toBe("satu quintiliun satu milyar satu");
   expect(angka.toTerbilang('1000200001000000001')).toBe("satu quintiliun dua ratus triliun satu milyar satu");

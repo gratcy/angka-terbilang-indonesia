@@ -89,7 +89,7 @@ export function toTerbilang(strAngka: string | number, config: ToTerbilangConfig
   let strA = '';
   for (let i = 0; i < angkaArr.length; ++i) {
     if (i === 1) {
-      strA += ` ${langArr[lang].koma} ` + terbilang(angkaArr[i]);
+      strA += ` ${langArr[lang].koma} ` + terbilangDecimal(angkaArr[i]);
     } else {
       strA += terbilang(angkaArr[i]);
     }
@@ -99,6 +99,22 @@ export function toTerbilang(strAngka: string | number, config: ToTerbilangConfig
 
 function replaceString(str: string, rep: string): string {
   return str.replace(rep, '');
+}
+
+function terbilangDecimal (strAngka: string) : string {
+  let angkaArr = strAngka.split('')
+  let str = ''
+  for(let i = 0; i <= angkaArr.length; ++i) {
+    if (angkaArr[i] === '0') {
+      str += ' ' + langArr[lang].nol
+    } else {
+      if (angkaArr[i]) {
+        str += ' ' + langArr[lang].angka[parseInt(angkaArr[i])]
+      }
+    }
+  }
+
+  return str.trim()
 }
 
 function terbilang(strAngka: string): string {

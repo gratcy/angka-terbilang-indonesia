@@ -58,7 +58,7 @@ function toTerbilang(strAngka, config = { dec: '.', lang: 'id' }) {
     let strA = '';
     for (let i = 0; i < angkaArr.length; ++i) {
         if (i === 1) {
-            strA += ` ${langArr[lang].koma} ` + terbilang(angkaArr[i]);
+            strA += ` ${langArr[lang].koma} ` + terbilangDecimal(angkaArr[i]);
         }
         else {
             strA += terbilang(angkaArr[i]);
@@ -68,6 +68,21 @@ function toTerbilang(strAngka, config = { dec: '.', lang: 'id' }) {
 }
 function replaceString(str, rep) {
     return str.replace(rep, '');
+}
+function terbilangDecimal(strAngka) {
+    let angkaArr = strAngka.split('');
+    let str = '';
+    for (let i = 0; i <= angkaArr.length; ++i) {
+        if (angkaArr[i] === '0') {
+            str += ' ' + langArr[lang].nol;
+        }
+        else {
+            if (angkaArr[i]) {
+                str += ' ' + langArr[lang].angka[parseInt(angkaArr[i])];
+            }
+        }
+    }
+    return str.trim();
 }
 function terbilang(strAngka) {
     var _a, _b;

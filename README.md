@@ -1,7 +1,7 @@
 This fork from `https://github.com/dimaskiddo/angka-terbilang-nodejs`
 
 # Angka to Terbilang [![NPM Version](https://img.shields.io/badge/npm-v6.13.4-blue)](https://www.npmjs.com/package/@gratcy/angka-terbilang-indonesia) [![Minified Size](https://img.shields.io/badge/minified_size-3.7Kib-blue)](https://www.npmjs.com/package/@gratcy/angka-terbilang-indonesia) [![NPM Downloads](https://img.shields.io/badge/downloads-464K-green)](https://www.npmjs.com/package/@gratcy/angka-terbilang-indonesia)
-Mengkonversi angka ke dalam bilangan bahasa Indonesia dan bahasa Inggris. Misalnya dari `123`, menjadi `seratus dua puluh tiga`. Atau bisa juga `123.45` menjadi `seratus dua puluh tiga koma empat puluh lima`. Bisa juga kedalam bahasa inggris.
+Mengkonversi angka ke dalam bilangan bahasa Indonesia dan bahasa Inggris. Misalnya dari `123`, menjadi `seratus dua puluh tiga`. Atau bisa juga `123.45` menjadi `seratus dua puluh tiga koma empat lima`. Bisa juga kedalam bahasa inggris menjadi `one hundred twenty three` dan `one hundred twenty three and four five`.
 
 ## Instalasi
 
@@ -17,18 +17,30 @@ yarn add @gratcy/angka-terbilang-indonesia
 atau langsung dari web browser
 
 ```html
-<script src="https://unpkg.com/@gratcy/angka-terbilang-indonesia/index.min.js">
+<script src="https://unpkg.com/@gratcy/angka-terbilang-indonesia/build/index.min.js">
 ```
 
 ## Penggunaan
-
+Javascript user
 ```js
 'use strict'
-const angkaTerbilang = require('angka-terbilang-indonesia')
+const angkaTerbilang = require('@gratcy/angka-terbilang-indonesia')
 
-console.log(angka.toTerbilang(10123))
-console.log(angka.toTerbilang(10123, { dec: '.', lang: 'id'}))
-console.log(angka.toTerbilang(10123.57))
+console.log(angka.toTerbilang(1123)) // seribu seratus dua puluh tiga
+console.log(angka.toTerbilang(1123, { dec: '.', lang: 'en'})) // one thousand one hundred twenty three
+console.log(angka.toTerbilang(1123.57)) // seribu seratus dua puluh tiga koma lima tujuh
+console.log(angka.toTerbilang(1123.57, { dec: '.', lang: 'en'})) // one thousand one hundred twenty three
+
+```
+
+Typescript user
+```ts
+'use strict'
+import toTerbilang from '@gratcy/angka-terbilang-indonesia'
+
+console.log(toTerbilang(1123, { dec: ',', lang: 'id' }))
+console.log(toTerbilang(1123.57, { dec: ',', lang: 'en' }))
+
 ```
 
 ## Option Parameter
