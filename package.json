@@ -2,11 +2,14 @@
   "name": "@gratcy/angka-terbilang-indonesia",
   "version": "1.0.4",
   "description": "Angka Terbilang in NodeJS for Converting Decimal to an Indonesian Wording format",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest",
-    "minified": "browserify -t [ babelify --presets [ @babel/preset-env ] ] -t uglifyify index.js --standalone angka > index.min.js",
-    "build": "npm run test && npm run minified"
+    "minified": "npm run minified-new && npm run minified-old",
+    "minified-new": "browserify -t [ babelify --presets [ @babel/preset-env ] ] -t uglifyify dist/index.js --standalone angka > build/index.min.js",
+    "minified-old": "browserify -t [ babelify --presets [ @babel/preset-env ] ] -t uglifyify dist/index.js --standalone angka > index.min.js",
+    "build": "tsc && npm run test && npm run minified"
   },
   "repository": {
     "type": "git",
@@ -35,6 +38,7 @@
     "babelify": "^10.0.0",
     "browserify": "^17.0.0",
     "jest": "^26.6.3",
+    "typescript": "^5.8.3",
     "uglifyify": "^5.0.0"
   }
 }
