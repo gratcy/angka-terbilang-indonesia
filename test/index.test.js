@@ -16,6 +16,18 @@ test('belasan', () => {
   expect(angka.toTerbilang('110011')).toBe("seratus sepuluh ribu sebelas");
 });
 
+test('belasan-desimal', () => {
+  expect(angka.toTerbilang('11000.11')).toBe("sebelas ribu koma satu satu");
+  expect(angka.toTerbilang('10000.11')).toBe("sepuluh ribu koma satu satu");
+  expect(angka.toTerbilang('11001.11')).toBe("sebelas ribu satu koma satu satu");
+  expect(angka.toTerbilang('11011.11')).toBe("sebelas ribu sebelas koma satu satu");
+  expect(angka.toTerbilang('1011021.11')).toBe("satu juta sebelas ribu dua puluh satu koma satu satu");
+  expect(angka.toTerbilang('190118.11')).toBe("seratus sembilan puluh ribu seratus delapan belas koma satu satu");
+  expect(angka.toTerbilang('16915.11')).toBe("enam belas ribu sembilan ratus lima belas koma satu satu");
+  expect(angka.toTerbilang('1017911.11')).toBe("satu juta tujuh belas ribu sembilan ratus sebelas koma satu satu");
+  expect(angka.toTerbilang('110011.11')).toBe("seratus sepuluh ribu sebelas koma satu satu");
+});
+
 test('ribuan-satu-ribu', () => {
   expect(angka.toTerbilang('1000')).toBe("seribu");
   expect(angka.toTerbilang('21000')).toBe("dua puluh satu ribu");
@@ -23,6 +35,15 @@ test('ribuan-satu-ribu', () => {
   expect(angka.toTerbilang('2001000')).toBe("dua juta seribu");
   expect(angka.toTerbilang('20001000')).toBe("dua puluh juta seribu");
   expect(angka.toTerbilang('200001000')).toBe("dua ratus juta seribu");
+});
+
+test('ribuan-satu-ribu-desimal', () => {
+  expect(angka.toTerbilang('1000.1122')).toBe("seribu koma satu satu dua dua");
+  expect(angka.toTerbilang('21000.1122')).toBe("dua puluh satu ribu koma satu satu dua dua");
+  expect(angka.toTerbilang('201000.1122')).toBe("dua ratus satu ribu koma satu satu dua dua");
+  expect(angka.toTerbilang('2001000.1122')).toBe("dua juta seribu koma satu satu dua dua");
+  expect(angka.toTerbilang('20001000.1122')).toBe("dua puluh juta seribu koma satu satu dua dua");
+  expect(angka.toTerbilang('200001000.1122')).toBe("dua ratus juta seribu koma satu satu dua dua");
 });
 
 test('jutaan', () => {
@@ -35,14 +56,15 @@ test('jutaan', () => {
   expect(angka.toTerbilang('121212121')).toBe("seratus dua puluh satu juta dua ratus dua belas ribu seratus dua puluh satu");
 });
 
-test('desimal', () => {
-  expect(angka.toTerbilang('1000000.11')).toBe("satu juta koma satu satu");
-  expect(angka.toTerbilang('1001000.11')).toBe("satu juta seribu koma satu satu");
-  expect(angka.toTerbilang('1011000.11')).toBe("satu juta sebelas ribu koma satu satu");
-  expect(angka.toTerbilang('131021111.11')).toBe("seratus tiga puluh satu juta dua puluh satu ribu seratus sebelas koma satu satu");
-  expect(angka.toTerbilang('11021111.11')).toBe("sebelas juta dua puluh satu ribu seratus sebelas koma satu satu");
-  expect(angka.toTerbilang('212121212.11')).toBe("dua ratus dua belas juta seratus dua puluh satu ribu dua ratus dua belas koma satu satu");
-  expect(angka.toTerbilang('121212121.11')).toBe("seratus dua puluh satu juta dua ratus dua belas ribu seratus dua puluh satu koma satu satu");
+
+test('jutaan-desimal', () => {
+  expect(angka.toTerbilang('1000000.1122')).toBe("satu juta koma satu satu dua dua");
+  expect(angka.toTerbilang('1001000.1122')).toBe("satu juta seribu koma satu satu dua dua");
+  expect(angka.toTerbilang('1011000.1122')).toBe("satu juta sebelas ribu koma satu satu dua dua");
+  expect(angka.toTerbilang('131021111.1122')).toBe("seratus tiga puluh satu juta dua puluh satu ribu seratus sebelas koma satu satu dua dua");
+  expect(angka.toTerbilang('11021111.1122')).toBe("sebelas juta dua puluh satu ribu seratus sebelas koma satu satu dua dua");
+  expect(angka.toTerbilang('212121212.1122')).toBe("dua ratus dua belas juta seratus dua puluh satu ribu dua ratus dua belas koma satu satu dua dua");
+  expect(angka.toTerbilang('121212121.1122')).toBe("seratus dua puluh satu juta dua ratus dua belas ribu seratus dua puluh satu koma satu satu dua dua");
 });
 
 test('big-number', () => {

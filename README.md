@@ -1,7 +1,10 @@
-This fork from `https://github.com/dimaskiddo/angka-terbilang-nodejs`
+[![NPM](https://nodei.co/npm/@gratcy/angka-terbilang-indonesia.svg?style=compact&color=brightgreen)](https://nodei.co/npm/@gratcy/angka-terbilang-indonesia/)
 
 # Angka to Terbilang [![NPM Version](https://img.shields.io/badge/npm-v6.13.4-blue)](https://www.npmjs.com/package/@gratcy/angka-terbilang-indonesia) [![Minified Size](https://img.shields.io/badge/minified_size-3.7Kib-blue)](https://www.npmjs.com/package/@gratcy/angka-terbilang-indonesia) [![NPM Downloads](https://img.shields.io/badge/downloads-464K-green)](https://www.npmjs.com/package/@gratcy/angka-terbilang-indonesia)
 Mengkonversi angka ke dalam bilangan bahasa Indonesia dan bahasa Inggris. Misalnya dari `123`, menjadi `seratus dua puluh tiga`. Atau bisa juga `123.45` menjadi `seratus dua puluh tiga koma empat lima`. Bisa juga kedalam bahasa inggris menjadi `one hundred twenty three` dan `one hundred twenty three and four five`.
+
+# Number or Amount to Words
+Convert number into Indonesia and English. Eg: from `123` in Indonesian, become `seratus dua puluh tiga`. Also in decimal `123.45` become `seratus dua puluh tiga koma empat lima`. Also in english become `one hundred twenty three` and `one hundred twenty three and four five`.
 
 ## Instalasi
 
@@ -81,6 +84,9 @@ console.log(toTerbilang(1123.57, { dec: ',', lang: 'en' }))
 
 ## Catatan
 Dibuat untuk kebutuhan Bareksa Payment Tribe
+
+## Fork and Modified 
+https://github.com/dimaskiddo/angka-terbilang-nodejs
 
 ## License
 Licensed under [Beerware](./LICENSE).
