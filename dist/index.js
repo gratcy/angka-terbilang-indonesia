@@ -72,14 +72,12 @@ function replaceString(str, rep) {
 function terbilangDecimal(strAngka) {
     let angkaArr = strAngka.split('');
     let str = '';
-    for (let i = 0; i <= angkaArr.length; ++i) {
+    for (let i = 0; i < angkaArr.length; ++i) {
         if (angkaArr[i] === '0') {
             str += ' ' + langArr[lang].nol;
         }
         else {
-            if (angkaArr[i]) {
-                str += ' ' + langArr[lang].angka[parseInt(angkaArr[i])];
-            }
+            str += ' ' + langArr[lang].angka[parseInt(angkaArr[i])];
         }
     }
     return str.trim();
