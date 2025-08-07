@@ -1,6 +1,6 @@
 [![NPM](https://nodei.co/npm/@gratcy/angka-terbilang-indonesia.svg?style=compact&color=brightgreen)](https://nodei.co/npm/@gratcy/angka-terbilang-indonesia/)
 
-# Angka to Terbilang
+# Number or Amount to Words
 
 Convert numbers into their word representation in **Bahasa Indonesia** or **English**.
 
