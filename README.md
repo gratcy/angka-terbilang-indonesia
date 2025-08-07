@@ -70,31 +70,31 @@ console.log(toTerbilang(1123.57, { dec: ",", lang: "en" }));
 
 ## Supports Large Numbers (up to 10⁶³)
 
-| Power | Unit             |
-| ----- | ---------------- |
-| 10¹   | puluhan          |
-| 10²   | ratusan          |
-| 10³   | ribu             |
-| 10⁶   | juta             |
-| 10⁹   | milyar           |
-| 10¹²  | triliun          |
-| 10¹⁵  | quadriliun       |
-| 10¹⁸  | quintiliun       |
-| 10²¹  | sextiliun        |
-| 10²⁴  | septiliun        |
-| 10²⁷  | oktiliun         |
-| 10³⁰  | noniliun         |
-| 10³³  | desiliun         |
-| 10³⁶  | undesiliun       |
-| 10³⁹  | duodesiliun      |
-| 10⁴²  | tredesiliun      |
-| 10⁴⁵  | quattuordesiliun |
-| 10⁴⁸  | quindesiliun     |
-| 10⁵¹  | sexdesiliun      |
-| 10⁵⁴  | septendesiliun   |
-| 10⁵⁷  | oktodesiliun     |
-| 10⁶⁰  | novemdesiliun    |
-| 10⁶³  | vigintiliun      |
+| Power | Unit (Indonesian) | English Equivalent |
+| ----- | ----------------- | ------------------ |
+| 10¹   | puluhan           | tens               |
+| 10²   | ratusan           | hundreds           |
+| 10³   | ribu              | thousands          |
+| 10⁶   | juta              | millions           |
+| 10⁹   | milyar            | billions           |
+| 10¹²  | triliun           | trillions          |
+| 10¹⁵  | kuadriliun        | quadrillions       |
+| 10¹⁸  | kuintiliun        | quintillions       |
+| 10²¹  | sekstiliun        | sextillions        |
+| 10²⁴  | septiliun         | septillions        |
+| 10²⁷  | oktiliun          | octillions         |
+| 10³⁰  | noniliun          | nonillions         |
+| 10³³  | desiliun          | decillions         |
+| 10³⁶  | undesiliun        | undecillions       |
+| 10³⁹  | duodesiliun       | duodecillions      |
+| 10⁴²  | tredesiliun       | tredecillions      |
+| 10⁴⁵  | quattuordesiliun  | quattuordecillions |
+| 10⁴⁸  | quindesiliun      | quindecillions     |
+| 10⁵¹  | seksdesiliun      | sexdecillions      |
+| 10⁵⁴  | septendesiliun    | septendecillions   |
+| 10⁵⁷  | oktodesiliun      | octodecillions     |
+| 10⁶⁰  | novemdesiliun     | novemdecillions    |
+| 10⁶³  | vigintiliun       | vigintillions      |
 
 ---
 
