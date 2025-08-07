@@ -101,16 +101,14 @@ function replaceString(str: string, rep: string): string {
   return str.replace(rep, '');
 }
 
-function terbilangDecimal (strAngka: string) : string {
+function terbilangDecimal(strAngka: string): string {
   let angkaArr = strAngka.split('')
   let str = ''
-  for(let i = 0; i <= angkaArr.length; ++i) {
+  for (let i = 0; i < angkaArr.length; ++i) {
     if (angkaArr[i] === '0') {
       str += ' ' + langArr[lang].nol
     } else {
-      if (angkaArr[i]) {
-        str += ' ' + langArr[lang].angka[parseInt(angkaArr[i])]
-      }
+      str += ' ' + langArr[lang].angka[parseInt(angkaArr[i])]
     }
   }
 
